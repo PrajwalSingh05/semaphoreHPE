@@ -1,10 +1,9 @@
 ---
-- name: Install sudo
-  shell: |
-    apt-get update
-    apt-get install -y sudo
-  become: yes
 
+- name: Install sudo package
+      apt:
+        name: sudo
+        state: present
 
 - name: Install and Start Nginx on Localhost
   hosts: localhost
