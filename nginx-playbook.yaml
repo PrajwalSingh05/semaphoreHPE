@@ -1,9 +1,13 @@
 ---
-
-- name: Install sudo package
+- name: Install sudo
+  hosts: localhost
+  become: yes
+  tasks:
+    - name: Install sudo package
       apt:
         name: sudo
         state: present
+
 
 - name: Install and Start Nginx on Localhost
   hosts: localhost
